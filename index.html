@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Warhammer Unit Stats</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="scripts.js"></script> 
 </head>
 <body>
     <div class="container">
@@ -12,11 +14,8 @@
             <h3><b>ANCIENT</b></h3>
             <div class="stats">
                 <div class="stat-box">M<br>6"</div>
-                <div class="stat-box">T<br>4</div>
                 <div class="stat-box">Sv<br>3+</div>
                 <div class="stat-box">W<br>4</div>
-                <div class="stat-box">Ld<br>6+</div>
-                <div class="stat-box">OC<br>1</div>
             </div>
         </div>
 
@@ -25,7 +24,7 @@
                 <table>
                     <thead>
                         <tr>
-                            <th colspan="7">RANGED WEAPONS</th>
+                            <th colspan="7" class="weapons-titles">RANGED WEAPONS</th>
                         </tr>
                         <tr>
                             <th>Weapon</th>
@@ -62,7 +61,7 @@
                 <table>
                   <thead>
                       <tr>
-                          <th colspan="7">MELEE WEAPONS</th>
+                          <th colspan="7" class="weapons-titles">MELEE WEAPONS</th>
                       </tr>
                       <tr>
                         <th>Weapon</th>
@@ -119,6 +118,10 @@
         <div class="footer">
             <p>FACTION KEYWORDS: <span class="underlined"><b>ADEPTUS ASTARTES</b></span></p>
         </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <button id="save-as-png" class="save-button">Save as PNG</button>
     </div>
 </body>
 </html>

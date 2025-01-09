@@ -75,34 +75,54 @@ body {
     font-size: 14px;
 }
 
+/* Table Styling */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    background-color: #1c1c1c; /* Matches container background */
+    border: 1px solid #333; /* Add border to entire table */
+    border-radius: 5px; /* Smooth edges for a modern look */
+    overflow: hidden; /* Ensures rounded corners look clean */
 }
 
-th, td {
-    border: none;
-    padding: 8px;
-    text-align: center;
-}
-
-th {
-    background-color: #4B6262;
+thead th {
+    background-color: #4B6262; /* Uniform header background color */
     color: white;
     font-weight: bold;
+    padding: 10px; /* Increased padding for readability */
+    text-align: center;
+    border-bottom: 2px solid #333; /* Clear separation from the body */
+}
+
+tbody tr {
+    border-bottom: 1px solid #444; /* Row separation */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #33393A; /* Alternating row colors */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #292929;
+}
+
+td {
+    color: #ddd; /* Text color for better contrast */
+    padding: 10px; /* Consistent padding for cells */
+    text-align: center; /* Center-aligned text */
+    vertical-align: middle; /* Align content in the middle */
+}
+
+.weapons-titles {
     text-align: left;
-    padding-left: 10px;
+    font-size: 16px; /* Slightly larger font size for titles */
+    color: #fff;
+    padding: 10px; /* Added padding for spacing */
+    background-color: #333; /* Distinct background for titles */
 }
 
-tr:nth-child(even) {
-    background-color: #33393A;
-}
-
-tr:nth-child(odd) {
-    background-color: #202020;
-}
-
+/* Abilities Section */
 .abilities {
     background-color: #292929;
     padding: 10px;
@@ -126,20 +146,20 @@ tr:nth-child(odd) {
     margin: 10px 0;
 }
 
-.options-container { /* New container */
+.options-container {
     margin-bottom: 20px;
 }
 
-.options-header { /* New header */
+.options-header {
     font-size: 14px;
     background-color: #4B6262;
     padding: 10px;
-    padding-left: 10px;
+    text-align: center; /* Center-align header text */
 }
 
-.options-list { /* New list */
-    list-style-type: disc; /* Use disc bullets */
-    padding-left: 20px; /* Indent the list items */
+.options-list {
+    list-style-type: disc;
+    padding-left: 20px;
     font-size: 14px;
     margin: 5px 0;
 }
@@ -148,6 +168,7 @@ tr:nth-child(odd) {
     margin-bottom: 5px;
 }
 
+/* Footer Styling */
 .footer {
     border-top: 1px solid #333;
     padding-top: 10px;
@@ -159,4 +180,19 @@ tr:nth-child(odd) {
 
 .underlined {
     text-decoration: underline dotted;
+}
+
+.save-button {
+    background-color: #4B6262;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.save-button:hover {
+    background-color: #5D7575;
 }
