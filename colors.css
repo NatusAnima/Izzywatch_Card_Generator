@@ -1,0 +1,20 @@
+:root {
+  --green: #4b6262;
+  --green-hover: #5d7575;
+  --white: #ffffff;
+  --black: #000000;
+  --blue-header: #0c3455;
+  --red: red;
+  --box-shadow-color: rgba(0, 0, 0, 0.5);
+  --container-color: #1c1c1c;
+  --border-color: #333;
+  --header-blue: #007bff;
+  --bordedr-gray-color: #708090;
+  --second-black: #292929;
+  --row-seperation-color: #444;
+  --alternate-row-color: #33393a;
+  --some-gray: #ddd;
+  --idk-some-dotted-color: #555;
+  --another-gray-thing: #888;
+  --dark-black-thing-idk: #1c1c1c;
+}

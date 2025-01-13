@@ -1,198 +1,270 @@
+@import "./colors.css";
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #000000;
-    color: white;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--black);
+  color: var(--white);
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-    background-color: #1c1c1c;
-    border: 1px solid #333;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    width: 800px;
-    margin: 20px auto;
+  background-color: var(--container-color);
+  border: 1px solid var(--border-color);
+  box-shadow: 0px 4px 10px var(--box-shadow-color);
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  margin: 20px auto;
 }
 
 .header {
-    background-color: black;
-    padding: 10px;
-    position: relative;
-    margin-bottom: 20px;
-    overflow: hidden;
+  background-color: var(--black);
+  padding: 10px;
+  position: relative;
+  margin-bottom: 20px;
+  overflow: hidden;
 }
 
 .header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 10px;
-    background-color: #007bff;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: var(--header-blue);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .header h3 {
-    margin: 0;
-    font-size: 20px;
-    color: white;
-    padding-top: 10px;
+  margin: 0;
+  font-size: 20px;
+  color: var(--white);
+  padding-top: 10px;
 }
 
 .stats {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .stat-box {
-    border: 1px solid #708090;
-    background-color: #292929;
-    color: white;
-    padding: 5px 10px;
-    text-align: center;
-    width: 40px;
-    font-weight: bold;
-    border-radius: 5px 0 5px 0;
+  border: 1px solid var(--bordedr-gray-color);
+  background-color: var(--second-black);
+  color: var(--white);
+  padding: 5px 10px;
+  text-align: center;
+  min-width: 25px;
+  font-weight: bold;
+  border-radius: 5px 0 5px 0;
+}
+
+.stat-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .main-content {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .left-section {
-    flex: 2;
-    font-size: 14px;
+  flex: 2;
+  font-size: 14px;
 }
 
 .right-section {
-    flex: 1;
-    font-size: 14px;
+  flex: 1;
+  font-size: 14px;
 }
 
 /* Table Styling */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-    background-color: #1c1c1c; /* Matches container background */
-    border: 1px solid #333; /* Add border to entire table */
-    border-radius: 5px; /* Smooth edges for a modern look */
-    overflow: hidden; /* Ensures rounded corners look clean */
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: var(
+    --dark-black-thing-idk
+  ); /* Matches container background */
+  border: 1px solid var(--border-color); /* Add border to entire table */
+  border-radius: 5px; /* Smooth edges for a modern look */
+  overflow: hidden; /* Ensures rounded corners look clean */
 }
 
 thead th {
-    background-color: #4B6262; /* Uniform header background color */
-    color: white;
-    font-weight: bold;
-    padding: 10px; /* Increased padding for readability */
-    text-align: center;
-    border-bottom: 2px solid #333; /* Clear separation from the body */
+  background-color: var(--green); /* Uniform header background color */
+  color: var(--white);
+  font-weight: bold;
+  padding: 10px; /*Increased padding for readability */
+  text-align: start;
+  border-bottom: 2px solid var(--border-color); /* Clear separation from the body */
 }
 
 tbody tr {
-    border-bottom: 1px solid #444; /* Row separation */
+  border-bottom: 1px solid var(--row-seperation-color); /* Row separation */
 }
 
 tbody tr:nth-child(even) {
-    background-color: #33393A; /* Alternating row colors */
+  background-color: var(--alternate-row-color); /* Alternating row colors */
 }
 
 tbody tr:nth-child(odd) {
-    background-color: #292929;
+  background-color: var(--second-black);
 }
 
 td {
-    color: #ddd; /* Text color for better contrast */
-    padding: 10px; /* Consistent padding for cells */
-    text-align: center; /* Center-aligned text */
-    vertical-align: middle; /* Align content in the middle */
+  color: var(--some-gray); /* Text color for better contrast */
+  padding: 10px; /* Consistent padding for cells */
+  text-align: center; /* Center-aligned text */
+  vertical-align: middle; /* Align content in the middle */
 }
 
 .weapons-titles {
-    text-align: left;
-    font-size: 16px; /* Slightly larger font size for titles */
-    color: #fff;
-    padding: 10px; /* Added padding for spacing */
-    background-color: #333; /* Distinct background for titles */
+  text-align: left;
+  font-size: 16px; /* Slightly larger font size for titles */
+  color: var(--white);
+  padding: 10px; /* Added padding for spacing */
+  background-color: var(--border-color); /* Distinct background for titles */
 }
 
 /* Abilities Section */
 .abilities {
-    background-color: #292929;
-    padding: 10px;
-    padding-top: 5px;
-    font-size: 14px;
+  background-color: var(--second-black);
+  padding: 10px;
+  padding-top: 5px;
+  font-size: 14px;
 }
 
 .abilities strong {
-    background-color: #4B6262;
-    display: block;
-    padding: 5px;
-    margin-bottom: 5px;
+  background-color: var(--green);
+  display: block;
+  padding: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
-.abilities p {
-    margin: 5px 0;
-}
+/* .abilities p {
+  margin: 5px 0;
+} */
 
 .dotted {
-    border-top: 1px dotted #555;
-    margin: 10px 0;
+  border-top: 1px dotted var(--idk-some-dotted-color);
+  margin: 10px 0;
 }
 
 .options-container {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .options-header {
-    font-size: 14px;
-    background-color: #4B6262;
-    padding: 10px;
-    text-align: center; /* Center-align header text */
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  font-size: 14px;
+  background-color: var(--green);
+  padding: 10px;
+  /* border-radius: 5px; */
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: 2px solid var(--border-color);
 }
 
 .options-list {
-    list-style-type: disc;
-    padding-left: 20px;
-    font-size: 14px;
-    margin: 5px 0;
+  list-style-type: disc;
+  padding-left: 20px;
+  font-size: 14px;
+  margin: 5px 0;
 }
 
 .options-list li {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 /* Footer Styling */
 .footer {
-    border-top: 1px solid #333;
-    padding-top: 10px;
-    text-align: center;
-    margin-top: 20px;
-    font-size: 12px;
-    color: #888;
+  border-top: 1px solid var(--border-color);
+  padding-top: 10px;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+  color: var(--another-gray-thing);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
 
 .underlined {
-    text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
+/* save button styling */
 .save-button {
-    background-color: #4B6262;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 14px;
-    margin-top: 10px;
+  background-color: var(--green);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-top: 10px;
 }
 
 .save-button:hover {
-    background-color: #5D7575;
+  background-color: var(--green-hover);
+}
+
+/* inverted add row button styling */
+.inverted-add-row-btn {
+  background-color: var(--border-color);
+  border: none;
+  color: var(--white);
+  padding: 2px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.inverted-add-row-btn:hover {
+  background-color: var(--alternate-row-color);
+}
+
+.weapon-titles-inner-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* title row styling */
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* disabled button styling */
+button:disabled {
+  cursor: not-allowed;
+}
+
+/* delete button styling */
+.delete-row-btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: var(--red);
 }
