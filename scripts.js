@@ -34,6 +34,16 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("save-as-png").addEventListener("click", () => {
     const container = document.querySelector(".container");
 
+    // Select all buttons (add and delete buttons)
+    const addButtons = document.querySelectorAll(
+      ".add-row-btn, .inverted-add-row-btn"
+    );
+    const deleteButtons = document.querySelectorAll(".delete-row-btn");
+
+    // Hide all add and delete buttons
+    addButtons.forEach((btn) => (btn.style.display = "none"));
+    deleteButtons.forEach((btn) => (btn.style.display = "none"));
+
     // Use html2canvas to capture the container div
     html2canvas(container, {
       backgroundColor: null, // Preserve transparency
@@ -50,6 +60,11 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch((error) => {
         console.error("Error capturing the card:", error);
         alert("Failed to save the card. Please try again.");
+      })
+      .finally(() => {
+        // Restore the visibility of add and delete buttons after the screenshot is taken
+        addButtons.forEach((btn) => (btn.style.display = ""));
+        deleteButtons.forEach((btn) => (btn.style.display = ""));
       });
   });
 });
