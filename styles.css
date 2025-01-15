@@ -19,23 +19,34 @@ body {
 }
 
 .header {
-  background-color: var(--black);
+  /* background-color: var(--black); */
   padding: 10px;
   position: relative;
   margin-bottom: 20px;
   overflow: hidden;
+  margin-top: -100px;
 }
 
-.header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+.header-blue-banner {
   width: 100%;
-  height: 10px;
+  height: 100px;
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 43.04%,
+    49.06% 43.04%,
+    47.3% 44.3%,
+    45.8% 49.37%,
+    44.3% 59.49%,
+    42.6% 73.42%,
+    41.27% 85.24%,
+    39.83% 93.24%,
+    38.1% 97.47%,
+    36% 100%,
+    0% 100%
+  );
   background-color: var(--header-blue);
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  margin-top: 20px;
 }
 
 .header h3 {
@@ -57,15 +68,21 @@ body {
   color: var(--white);
   padding: 5px 10px;
   text-align: center;
-  min-width: 25px;
+  min-width: 30px;
   font-weight: bold;
   border-radius: 5px 0 5px 0;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
 }
 
 .stat-column {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 18px;
 }
 
 .main-content {

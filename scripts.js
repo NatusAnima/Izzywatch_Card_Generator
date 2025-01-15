@@ -39,10 +39,12 @@ document.addEventListener("DOMContentLoaded", () => {
       ".add-row-btn, .inverted-add-row-btn"
     );
     const deleteButtons = document.querySelectorAll(".delete-row-btn");
+    const th = document.querySelectorAll(".extra");
 
     // Hide all add and delete buttons
     addButtons.forEach((btn) => (btn.style.display = "none"));
     deleteButtons.forEach((btn) => (btn.style.display = "none"));
+    th.forEach((th) => (th.style.display = "none"));
 
     // Use html2canvas to capture the container div
     html2canvas(container, {
@@ -65,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Restore the visibility of add and delete buttons after the screenshot is taken
         addButtons.forEach((btn) => (btn.style.display = ""));
         deleteButtons.forEach((btn) => (btn.style.display = ""));
+        th.forEach((th) => (th.style.display = ""));
       });
   });
 });
