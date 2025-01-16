@@ -38,7 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const addButtons = document.querySelectorAll(
       ".add-row-btn, .inverted-add-row-btn"
     );
-    const deleteButtons = document.querySelectorAll(".delete-row-btn");
+    const deleteButtons = document.querySelectorAll(
+      ".delete-row-btn, .delete-ability-btn"
+    );
     const th = document.querySelectorAll(".extra");
 
     // Hide all add and delete buttons
@@ -217,4 +219,65 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+});
+
+// add delete ability
+document.addEventListener("DOMContentLoaded", function () {
+  const abilitiesContainer = document.querySelector(".other-abilities");
+  const addAbilitiesBtn = document.getElementById("addAbilitiesBtn");
+  const maxAbilities = 4; // Max abilities allowed
+
+  // Function to update the button state
+  function updateButtonState() {
+    const abilitiesCount = document.querySelectorAll(
+      ".abilities-column-section"
+    ).length;
+    addAbilitiesBtn.disabled = abilitiesCount >= maxAbilities;
+  }
+
+  // Function to delete an ability
+  function deleteAbility(event) {
+    event.target.closest(".abilities-column-section").remove();
+    updateButtonState(); // Update button state after deletion
+  }
+
+  // Attach delete event listener to existing abilities
+  document.querySelectorAll(".delete-ability-btn").forEach((button) => {
+    button.addEventListener("click", deleteAbility);
+  });
+
+  // Function to add a new ability
+  function addAbility() {
+    if (
+      document.querySelectorAll(".abilities-column-section").length >=
+      maxAbilities
+    ) {
+      return; // Prevent adding more than the limit
+    }
+
+    const newAbility = document.createElement("div");
+    newAbility.classList.add("abilities-column-section");
+    newAbility.innerHTML = `
+      <div class="abilities-title-row">
+        <strong>New Ability:</strong>
+        <button class="delete-ability-btn static">X</button>
+      </div>
+      <p>Enter ability description here...</p>
+    `;
+
+    // Attach delete event to the new button
+    newAbility
+      .querySelector(".delete-ability-btn")
+      .addEventListener("click", deleteAbility);
+
+    // Append the new ability section to the container
+    abilitiesContainer.appendChild(newAbility);
+    updateButtonState(); // Update button state after addition
+  }
+
+  // Attach event listener to the add button
+  addAbilitiesBtn.addEventListener("click", addAbility);
+
+  // Initial check to disable the button if needed
+  updateButtonState();
 });
