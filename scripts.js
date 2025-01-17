@@ -24,15 +24,19 @@ function makeEditable(event) {
 // Initialize event listeners on DOM content loaded
 document.addEventListener("DOMContentLoaded", () => {
   // Add the double-click event to all text-containing elements
-  document.querySelectorAll(".container *").forEach((el) => {
-    if (el.innerText.trim() !== "" && !el.classList.contains("static")) {
-      el.addEventListener("dblclick", makeEditable);
-    }
-  });
+  document
+    .querySelectorAll(".container, .container-stratagems *")
+    .forEach((el) => {
+      if (el.innerText.trim() !== "" && !el.classList.contains("static")) {
+        el.addEventListener("dblclick", makeEditable);
+      }
+    });
 
   // Add click listener to the "Save as PNG" button
   document.getElementById("save-as-png").addEventListener("click", () => {
-    const container = document.querySelector(".container");
+    const container = document.querySelector(
+      ".container, .container-stratagems"
+    );
 
     // Select all buttons (add and delete buttons)
     const addButtons = document.querySelectorAll(
@@ -293,4 +297,111 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initial check to disable the button if needed
   updateButtonState();
+});
+
+// image onclick
+document.addEventListener("DOMContentLoaded", function () {
+  // Array of images
+  const images = [
+    "./icons/stratAny.svg",
+    "./icons/stratCharge.svg",
+    "./icons/stratCommand.svg",
+    "./icons/stratFight.svg",
+    "./icons/stratMovement.svg",
+    "./icons/stratShooting.svg",
+  ];
+
+  let currentImageIndex = 0;
+
+  // Get the image element and the container
+  const imageElement = document.getElementById("diamondImage");
+  const imageContainer = document.getElementById("imageContainer");
+
+  // Function to change the image when the container is clicked
+  imageContainer.addEventListener("click", function () {
+    // Increment the index and wrap around using the modulo operator
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+
+    // Set the new image src
+    imageElement.src = images[currentImageIndex];
+  });
+});
+
+// change color
+document.addEventListener("DOMContentLoaded", function () {
+  const bgColors = ["bg-green", "bg-red", "bg-blue"];
+  const textColors = ["color-green", "color-red", "color-blue"];
+  const borderColors = ["border-green", "border-red", "border-blue"];
+  const filterClasses = ["icon-green", "icon-red", "icon-blue"]; // Image filters
+
+  // Select all elements with background, text, border, and image filters
+  const bgElements = document.querySelectorAll(".bg-green, .bg-red, .bg-blue");
+  const textElements = document.querySelectorAll(
+    ".color-green, .color-red, .color-blue"
+  );
+  const borderElements = document.querySelectorAll(
+    ".border-green, .border-red, .border-blue"
+  );
+  const filterElements = document.querySelectorAll(
+    ".icon-green, .icon-red, .icon-blue"
+  );
+
+  const colorContainer = document.getElementById("colorContainer");
+
+  if (
+    !colorContainer ||
+    (!bgElements.length &&
+      !textElements.length &&
+      !borderElements.length &&
+      !filterElements.length)
+  ) {
+    console.error("Elements not found!"); // Check if elements exist
+    return;
+  }
+
+  colorContainer.addEventListener("click", function () {
+    // Update background color elements
+    bgElements.forEach((element) => {
+      let currentClass = bgColors.find((c) => element.classList.contains(c));
+      let currentIndex = bgColors.indexOf(currentClass);
+
+      if (currentClass) element.classList.remove(currentClass);
+      let newIndex = (currentIndex + 1) % bgColors.length;
+      element.classList.add(bgColors[newIndex]);
+    });
+
+    // Update text color elements
+    textElements.forEach((element) => {
+      let currentClass = textColors.find((c) => element.classList.contains(c));
+      let currentIndex = textColors.indexOf(currentClass);
+
+      if (currentClass) element.classList.remove(currentClass);
+      let newIndex = (currentIndex + 1) % textColors.length;
+      element.classList.add(textColors[newIndex]);
+    });
+
+    // Update border color elements
+    borderElements.forEach((element) => {
+      let currentClass = borderColors.find((c) =>
+        element.classList.contains(c)
+      );
+      let currentIndex = borderColors.indexOf(currentClass);
+
+      if (currentClass) element.classList.remove(currentClass);
+      let newIndex = (currentIndex + 1) % borderColors.length;
+      element.classList.add(borderColors[newIndex]);
+    });
+
+    // Update image filters
+    filterElements.forEach((element) => {
+      let currentClass = filterClasses.find((c) =>
+        element.classList.contains(c)
+      );
+      let currentIndex = filterClasses.indexOf(currentClass);
+
+      if (currentClass) element.classList.remove(currentClass);
+      let newIndex = (currentIndex + 1) % filterClasses.length;
+      element.classList.add(filterClasses[newIndex]);
+    });
+  });
 });

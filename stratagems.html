@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stratagems</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="scripts.js"></script>
+  </head>
+  <body>
+    <div class="container-stratagems">
+      <div class="left-section-wrapper">
+        <div
+          class="diamond-shape diamond-shape-to-connect static border-green"
+          id="imageContainer"
+        >
+          <img
+            class="diamond-image icon-green"
+            id="diamondImage"
+            src="./icons/stratAny.svg"
+          />
+        </div>
+        <div class="diamond-shape margin-top-40 border-green">
+          <div class="diamond-text color-green">1CP</div>
+        </div>
+        <div
+          class="diamond-shape-for-color margin-top-40 static"
+          id="colorContainer"
+        >
+          <div class="diamond-color bg-green" id="diamondColor"></div>
+        </div>
+      </div>
+      <div class="header-stratagem">
+        <h3 class="stratagem-header color-green">
+          <b>COMMAND RE-ROLL</b>
+        </h3>
+        <hr class="colored-line border-green" />
+        <p style="text-transform: uppercase">core - battle tactic stratagem</p>
+        <hr class="dotted" />
+        <p>
+          <i
+            >A great commander can bend even the vagaries of fate and fortune to
+            their will, the better to ensure victory.</i
+          >
+        </p>
+        <hr class="dotted" />
+        <p>
+          <b class="color-green">WHEN:</b>
+          Any phase, just after you make an Advance roll, a Charge roll, a
+          Desperate Escape test or a Hazardous test for a unit from your army,
+          or a Hit roll, a Wound roll, a Damage roll or a saving throw for a
+          model in that unit, or a roll to determine the number of attacks made
+          with a weapon equipped by a model in that unit. If you are using fast
+          dice rolling, this Stratagem can still be used after rolling multiple
+          rolls or saving throws at once.
+        </p>
+        <p>
+          <b class="color-green">TARGET:</b>
+          That unit or model from your army.
+        </p>
+        <p>
+          <b class="color-green">EFFECT:</b>
+          You re-roll that roll, test or saving throw. If you are using fast
+          dice rolling, select one of those rolls or saving throws to re-roll.
+        </p>
+        <hr class="dotted" />
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 20px; margin-bottom: 20px">
+      <button id="save-as-png" class="save-button">Save as PNG</button>
+    </div>
+  </body>
+</html>
