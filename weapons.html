@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weapons</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="scripts.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-weapons">
+        <h3><b>PISTOL</b></h3>
+        <p><i>Pistols can be wielded even at point-blank range.</i></p>
+        <p style="line-height: 140%">
+          Weapons with [PISTOL] in their profile are known as Pistols. If a unit
+          contains any models equipped with Pistols, that unit is eligible to
+          shoot in its controlling player’s Shooting phase even while it is
+          within Engagement Range of one or more enemy units. When such a unit
+          is selected to shoot, it can only resolve attacks using its Pistols
+          and can only target one of the enemy units it is within Engagement
+          Range of. In such circumstances, a Pistol can target an enemy unit
+          even if other friendly units are within Engagement Range of the same
+          enemy unit.
+        </p>
+        <p style="line-height: 140%; margin-top: 30px">
+          If a model is equipped with one or more Pistols, unless it is a
+          MONSTER or VEHICLE model, it can either shoot with its Pistols or with
+          all of its other ranged weapons. Declare whether such a model will
+          shoot with its Pistols or its other ranged weapons before selecting
+          targets.
+        </p>
+      </div>
+
+      <div class="main-content-weapons">
+        <div class="weapon-stats-wrapper">
+          <div style="margin-top: 10px; margin-left: 10px; margin-bottom: 10px">
+            <button class="inverted-add-row-btn" id="addWeaponStats">+</button>
+          </div>
+          <ul class="options-list">
+            <li>
+              Can be shot even if the bearer’s unit is within Engagement Range
+              of enemy units, but must target one of those enemy units.
+            </li>
+            <li>
+              Cannot be shot alongside any other non-Pistol weapon (except by a
+              MONSTER or VEHICLE).
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 20px; margin-bottom: 20px">
+      <button id="save-as-png" class="save-button">Save as PNG</button>
+    </div>
+  </body>
+</html>

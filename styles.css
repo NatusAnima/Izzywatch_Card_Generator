@@ -20,6 +20,10 @@ body {
   margin: 20px auto;
 }
 
+.header-margin {
+  margin-top: -100px;
+}
+
 /* header styling */
 .header {
   /* background-color: var(--black); */
@@ -27,7 +31,6 @@ body {
   position: relative;
   margin-bottom: 20px;
   overflow: hidden;
-  margin-top: -100px;
 }
 
 /* header blue banner section styling */
@@ -317,4 +320,19 @@ button:disabled {
   position: absolute;
   right: 5px;
   top: 5px;
+}
+
+.header-weapons {
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.weapon-stats-wrapper {
+  background-color: #424546;
+  padding: 5px 10px;
+}
+
+.main-content-weapons {
+  padding: 10px;
 }

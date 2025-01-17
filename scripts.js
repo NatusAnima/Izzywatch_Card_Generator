@@ -111,10 +111,10 @@ document.addEventListener("DOMContentLoaded", function () {
   function setupTable({ tableId, addButtonId, maxRows, defaultRowData }) {
     const table = document.getElementById(tableId);
     const addButton = document.getElementById(addButtonId);
-    const tableBody = table.querySelector("tbody");
+    const tableBody = table?.querySelector("tbody");
 
     // Event delegation for delete functionality
-    tableBody.addEventListener("click", function (event) {
+    tableBody?.addEventListener("click", function (event) {
       if (
         event.target.tagName === "BUTTON" &&
         event.target.textContent === "X"
@@ -172,53 +172,62 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// wargear options add delete
 document.addEventListener("DOMContentLoaded", function () {
-  const addWargearButton = document.getElementById("addWargearRowButton");
-  const optionsList = document.querySelector(".options-list");
+  function setupListManager({ addButtonId, listContainerClass, defaultText }) {
+    const addButton = document.getElementById(addButtonId);
+    const optionsList = document.querySelector(`.${listContainerClass}`);
 
-  if (addWargearButton && optionsList) {
-    addWargearButton.addEventListener("click", function () {
-      // Create a new <div> element (outer container)
+    if (!addButton || !optionsList) return; // Ensure elements exist
+
+    // Function to add a new list item
+    function addListItem() {
       const outerDiv = document.createElement("div");
-
-      // Create a <li> element
       const newOption = document.createElement("li");
-
-      // Create a <div> to contain the content and the delete button
       const optionContainer = document.createElement("div");
 
-      // Create the text content for the <li>
       const optionText = document.createElement("span");
-      optionText.textContent = "New wargear option"; // Default content for new option
+      optionText.textContent = defaultText; // Customizable default text
       optionContainer.appendChild(optionText);
 
-      // Create the delete button
       const deleteButton = document.createElement("button");
       deleteButton.textContent = "X";
-      deleteButton.classList.add("delete-row-btn", "static"); // Optional: add a class for styling
+      deleteButton.classList.add("delete-row-btn", "static");
       optionContainer.appendChild(deleteButton);
 
-      // Append the <div> container to the <li>
       newOption.appendChild(optionContainer);
-
-      // Append the <li> to the outer <div>
       outerDiv.appendChild(newOption);
-
-      // Append the outer <div> to the options list
       optionsList.appendChild(outerDiv);
-    });
+    }
 
-    // Use event delegation to handle delete button clicks
+    // Attach click event to the add button
+    addButton.addEventListener("click", addListItem);
+
+    // Use event delegation for delete buttons
     optionsList.addEventListener("click", function (event) {
       if (
         event.target.tagName === "BUTTON" &&
         event.target.textContent === "X"
       ) {
         const listItem = event.target.closest("li");
-        listItem.remove(); // Remove the <li> from the list
+        if (listItem) listItem.remove();
       }
     });
   }
+
+  // ✅ Setup for Wargear Section
+  setupListManager({
+    addButtonId: "addWargearRowButton",
+    listContainerClass: "options-list",
+    defaultText: "New wargear option",
+  });
+
+  // ✅ Setup for Weapon Stats Section
+  setupListManager({
+    addButtonId: "addWeaponStats",
+    listContainerClass: "options-list",
+    defaultText: "New weapon stat",
+  });
 });
 
 // add delete ability
@@ -232,7 +241,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const abilitiesCount = document.querySelectorAll(
       ".abilities-column-section"
     ).length;
-    addAbilitiesBtn.disabled = abilitiesCount >= maxAbilities;
+    if (addAbilitiesBtn) {
+      addAbilitiesBtn.disabled = abilitiesCount >= maxAbilities;
+    }
   }
 
   // Function to delete an ability
@@ -276,7 +287,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Attach event listener to the add button
-  addAbilitiesBtn.addEventListener("click", addAbility);
+  if (addAbilitiesBtn) {
+    addAbilitiesBtn.addEventListener("click", addAbility);
+  }
 
   // Initial check to disable the button if needed
   updateButtonState();
