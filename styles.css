@@ -7,6 +7,7 @@ body {
   color: var(--white);
   margin: 0;
   padding: 0;
+  font-size: 16px;
 }
 
 /* container styling */
@@ -16,7 +17,7 @@ body {
   box-shadow: 0px 4px 10px var(--box-shadow-color);
   display: flex;
   flex-direction: column;
-  width: 800px;
+  width: 850px;
   margin: 20px auto;
 }
 
@@ -115,13 +116,11 @@ body {
 /* left section styling */
 .left-section {
   flex: 2;
-  font-size: 14px;
 }
 
 /* right section styling */
 .right-section {
   flex: 1;
-  font-size: 14px;
 }
 
 /* Table Styling */
@@ -169,7 +168,6 @@ td {
 /* weapons titles styling */
 .weapons-titles {
   text-align: left;
-  font-size: 16px; /* Slightly larger font size for titles */
   color: var(--white);
   padding: 10px; /* Added padding for spacing */
   background-color: var(--border-color); /* Distinct background for titles */
@@ -180,7 +178,6 @@ td {
   background-color: var(--second-black);
   padding: 10px;
   padding-top: 5px;
-  font-size: 14px;
 }
 
 /* abilities strong styling */
@@ -209,7 +206,6 @@ td {
   flex-direction: row;
   gap: 10px;
   align-items: center;
-  font-size: 14px;
   background-color: var(--green);
   padding: 10px;
   /* border-radius: 5px; */
@@ -222,7 +218,6 @@ td {
 .options-list {
   list-style-type: disc;
   padding-left: 20px;
-  font-size: 14px;
   margin: 5px 0;
 }
 
@@ -237,7 +232,6 @@ td {
   padding-top: 10px;
   text-align: center;
   margin-top: 20px;
-  font-size: 12px;
   color: var(--another-gray-thing);
   display: flex;
   align-items: center;
@@ -266,7 +260,6 @@ td {
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
-  font-size: 14px;
   margin-top: 10px;
 }
 
