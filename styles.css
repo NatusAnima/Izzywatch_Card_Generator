@@ -454,3 +454,7 @@ button:disabled {
   width: 45px;
   height: 45px;
 }
+
+.bg-white {
+  background-color: var(--white);
+}
