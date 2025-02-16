@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
       '0"', // Range
       "0", // A
       "0+", // BS
-      "0", // S
+      // "0", // S
       "0", // AP
       "0", // D
     ],
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "Melee", // Range (specific for melee weapons)
       "0", // A
       "0+", // BS
-      "0", // S
+      // "0", // S
       "0", // AP
       "0", // D
     ],
